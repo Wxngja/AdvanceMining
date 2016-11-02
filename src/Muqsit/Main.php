@@ -1,6 +1,6 @@
 <?php
 
-namespace Muqsit;
+namespace AdvanceMining;
 
 use pocketmine\Server;
 use pocketmine\Player;
@@ -8,20 +8,16 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\command\ConsoleCommandSender;
-use pocketmine\utils\Config;
+use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\item\Item;
 use pocketmine\utils\TextFormat as TF;
 
 class Main extends PluginBase implements Listener{
 	
-	/** @var array $breaks */
-	private $breaks;
-	// Will you even be needing this?? :o
 	public function onEnable(){
 	    $this->getServer()->getPluginManager()->registerEvents($this, $this);
-		    @mkdir($this->getDataFolder());
-	       # Config isn't used.
-	       $this->getLogger()->info(" enabled"); # Don't add this log message at beggining of function it can be misleading
+		    @mkdir($this->getDataFolder())
+	       $this->getLogger()->info("AdvancedMining");
 	}
 
 	// Thanks to @PrimusLV
