@@ -33,14 +33,14 @@ class Main extends PluginBase implements Listener{
 	      }
 	}
             if ($id == 15) {
-                $event->getDrops($event->setDrops(array(Item::get(Item::IRON_INGOT, 0, 2))));
+                $event->getDrops($event->setDrops(array(Item::get(Item::IRON_INGOT, 0, 3))));
             }
             if ($id == 14) {
-                $event->getDrops($event->setDrops(array(Item::get(Item::GOLD_INGOT, 0, 2))));
+                $event->getDrops($event->setDrops(array(Item::get(Item::GOLD_INGOT, 0, 3))));
             }
 			
 			if($id == 56){
-				$event->getDrops($event->setDrops(array(Item::get(Item::DIAMOND_INGOT,0,2))));
+				$event->getDrops($event->setDrops(array(Item::get(Item::DIAMOND_INGOT,0,3))));
 			}
 	 }
 	
