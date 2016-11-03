@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener{
 	public function onBlockBreak(BlockBreakEvent $event){
 	   if($event->isCancelled()) return;
 	   $player = $event->getPlayer();
-	      if($this->breaks[$name] >= 128){
+	      if($this->breaks[$name] >= 64){
 	         $event->getPlayer()->sendMessage(TF::YELLOW . "You broke 128 blocks, " . TF::AQUA . "WHOOOO!"));
 	         $this->giveEffect($player, 3, 100, 5);
 	         $this->breaks[$name] = 0; # Reset the counter, to avoid ^^ spam.
@@ -32,6 +32,17 @@ class Main extends PluginBase implements Listener{
 	        $this->breaks[$name]++;
 	      }
 	}
+            if ($id == 15) {
+                $event->getDrops($event->setDrops(array(Item::get(Item::IRON_INGOT, 0, 2))));
+            }
+            if ($id == 14) {
+                $event->getDrops($event->setDrops(array(Item::get(Item::GOLD_INGOT, 0, 2))));
+            }
+			
+			if($id == 56){
+				$event->getDrops($event->setDrops(array(Item::get(Item::DIAMOND_INGOT,0,2))));
+			}
+	 }
 	
 	/**
 	 * @param Player $player
